@@ -1,0 +1,93 @@
+<style>
+	.body{
+		height: 100%;
+		width: 100%;
+		background: #6495ED;
+	}
+	.block {
+		height: 100%;
+		width: 100%;
+		
+	}
+	.textarea {
+		height: 700px;
+		width: 700px;
+		position: absolute;
+		background: #202020;
+		color: 	#7CFC00;
+		border-radius: 10px;
+		margin-left: 40px;
+		margin-top: 20px;
+	}
+	.pc {
+		height: 340px;
+		width: 700px;
+		border: 1px solid black;
+		margin-left: 755px;
+		margin-top: 20px;
+		position: absolute;
+		background: #FDF5E6;
+		border-radius: 10px;
+	}
+	.tablet {
+		height: 350px;
+		width: 180px;
+		border: 1px solid black;
+		margin-left: 755px;
+		margin-top: 367px;
+		position: absolute;
+		background: #FDF5E6;
+		border-radius: 10px;
+	}
+	.phone {
+		height: 350px;
+		width: 515px;
+		border: 1px solid black;
+		margin-left: 940px;
+		margin-top: 367px;
+		position: absolute;
+		background: #FDF5E6;
+		border-radius: 10px;
+	}
+
+
+
+</style>
+
+<main class="body" id="main" v-cloak>
+
+        <textarea class="textarea" v-model="text_content"></textarea>
+        <div class="pc" v-html="text_content"></div>
+     	<div class="tablet" v-html="text_content"></div>
+     	<div class="phone" v-html="text_content"></div>
+
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+    <script>
+const app = new Vue({
+
+  el: '#main',
+
+    // Определяем свойства и передаем им значения.
+    data: {
+        show_tooltip: true,
+        text_content:'<!DOCTYPE html>\n <html>\n  <head>\n   <title></title>\n  </head>\n  <body>\n  </body>\n</html>',
+        lesson: ' Здесь будет тип урок по всратой вёрстке, который будет вырвиглазно оформлен и тип иди нахуй всё вжопу бля заебало меня ..'
+    },
+
+    // Функции, которые будут использоваться.
+    methods: {
+        hideTooltip: function(){
+            // Когда модель изменена, представление обновится.
+            this.show_tooltip = false;
+        },
+        toggleTooltip: function(){
+            this.show_tooltip = !this.show_tooltip;
+        }
+    }
+
+})
+
+
+
+    </script>
